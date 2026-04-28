@@ -1,4 +1,3 @@
-using UnityEditor.Playables;
 using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
@@ -8,13 +7,16 @@ public class AbilityManager : MonoBehaviour
     public Ability attack2;
     void Update()
     {
+        // Traversal
         if (Input.GetKeyDown(KeyCode.Q))
             traversal1?.Use(gameObject);
         if (Input.GetKeyDown(KeyCode.E))
             traversal2?.Use(gameObject);
+        // Attacks
         if (Input.GetMouseButtonDown(0))
-            attack1?.Use(gameObject);
+            attack1?.Use(gameObject); // Left click
         if (Input.GetMouseButtonDown(1))
-            attack2?.Use(gameObject);
+            attack2?.Use(gameObject); // Right click
     }
+
 }
